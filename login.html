@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Snapp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card animate-slide-up">
+            <div class="auth-header">
+                <a href="index.html" class="auth-logo">
+                    <i class="fas fa-taxi"></i>
+                    <span>Snapp</span>
+                </a>
+                <h2 class="auth-title">Welcome Back!</h2>
+                <p class="auth-subtitle">Login to continue your ride</p>
+            </div>
+
+            <form id="loginForm" class="auth-form">
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        <i class="fas fa-envelope"></i>
+                        Email Address
+                    </label>
+                    <input type="email" 
+                           class="form-control" 
+                           id="email" 
+                           name="email" 
+                           placeholder="Enter your email"
+                           required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password" class="form-label">
+                        <i class="fas fa-lock"></i>
+                        Password
+                    </label>
+                    <div class="password-field">
+                        <input type="password" 
+                               class="form-control" 
+                               id="password" 
+                               name="password" 
+                               placeholder="Enter your password"
+                               required>
+                        <button type="button" class="password-toggle" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <!-- User Type Selection -->
+                <div class="user-type-selector">
+                    <label class="radio-container">
+                        <input type="radio" name="userType" value="user" checked>
+                        <span class="radio-custom"></span>
+                        <span>Rider</span>
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="userType" value="driver">
+                        <span class="radio-custom"></span>
+                        <span>Driver</span>
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="userType" value="admin">
+                        <span class="radio-custom"></span>
+                        <span>Admin</span>
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-block" id="loginBtn">
+                    <span class="btn-text">Login</span>
+                    <span class="btn-loader" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </span>
+                </button>
+
+                <!-- Sign Up Link -->
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="register.html">Sign up now</a></p>
+                </div>
+            </form>
+
+            <!-- Social Login Options -->
+            <div class="social-login">
+                <div class="divider">
+                    <span>Or login with</span>
+                </div>
+                <div class="social-buttons">
+                    <button class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button class="social-btn facebook-btn">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast-notification" id="toastNotification">
+        <i class="fas fa-info-circle"></i>
+        <span class="toast-message"></span>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

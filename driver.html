@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Dashboard - Snapp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Driver Navigation -->
+    <nav class="driver-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="driver.html" class="nav-brand">
+                    <i class="fas fa-taxi"></i>
+                    <span>Snapp Driver</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <div class="driver-status">
+                    <label class="switch">
+                        <input type="checkbox" id="onlineToggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="status-text" id="statusText">Offline</span>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <div class="driver-earnings">
+                    <span>Today:</span>
+                    <strong id="todayEarnings">$0</strong>
+                </div>
+                <button class="nav-icon-btn" id="notificationsBtn">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <div class="user-menu" id="userMenu">
+                    <img src="assets/images/driver-avatar.png" alt="Driver" class="user-avatar">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Driver Dashboard Main -->
+    <div class="driver-dashboard">
+        <div class="dashboard-grid">
+            <!-- Left Column - Driver Stats & Controls -->
+            <div class="driver-left-panel">
+                <!-- Earnings Card -->
+                <div class="stats-card">
+                    <h3>Today's Summary</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">Earnings</span>
+                            <span class="stat-value" id="statEarnings">$0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Trips</span>
+                            <span class="stat-value" id="statTrips">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Online Time</span>
+                            <span class="stat-value" id="statOnlineTime">0h</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Rating</span>
+                            <span class="stat-value" id="statRating">4.8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ride Request Card -->
+                <div class="ride-request-card" id="rideRequestCard" style="display: none;">
+                    <div class="request-header">
+                        <i class="fas fa-bell ringing"></i>
+                        <h3>New Ride Request!</h3>
+                    </div>
+                    
+                    <div class="request-details">
+                        <div class="request-location">
+                            <i class="fas fa-circle pickup-icon"></i>
+                            <div class="location-info">
+                                <span class="location-label">Pickup</span>
+                                <span class="location-address" id="requestPickup">123 Main St</span>
+                            </div>
+                        </div>
+                        <div class="request-location">
+                            <i class="fas fa-square destination-icon"></i>
+                            <div class="location-info">
+                                <span class="location-label">Destination</span>
+                                <span class="location-address" id="requestDestination">456 Oak Ave</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="request-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-user"></i>
+                            <span id="requestPassenger">John D.</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-star"></i>
+                            <span id="passengerRating">4.9</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span id="requestDistance">2.3 km away</span>
+                        </div>
+                    </div>
+
+                    <div class="request-actions">
+                        <button class="btn btn-outline-danger" id="declineRide">Decline</button>
+                        <button class="btn btn-primary" id="acceptRide">Accept</button>
+                    </div>
+                </div>
+
+                <!-- Active Ride Card -->
+                <div class="active-ride-card" id="activeRideCard" style="display: none;">
+                    <div class="active-header">
+                        <h3>Active Ride</h3>
+                        <span class="ride-status-badge" id="activeRideStatus">Arriving</span>
+                    </div>
+
+                    <!-- Navigation Steps -->
+                    <div class="ride-steps">
+                        <div class="step active" id="stepArriving">
+                            <i class="fas fa-location-arrow"></i>
+                            <span>Arriving</span>
+                        </div>
+                        <div class="step" id="stepBoarding">
+                            <i class="fas fa-user-check"></i>
+                            <span>Boarding</span>
+                        </div>
+                        <div class="step" id="stepEnRoute">
+                            <i class="fas fa-route"></i>
+                            <span>En Route</span>
+                        </div>
+                        <div class="step" id="stepComplete">
+                            <i class="fas fa-flag-checkered"></i>
+                            <span>Complete</span>
+                        </div>
+                    </div>
+
+                    <!-- Passenger Info -->
+                    <div class="passenger-info">
+                        <img src="assets/images/passenger-avatar.png" alt="Passenger" class="passenger-avatar">
+                        <div class="passenger-details">
+                            <h4 id="activePassenger">Michael Brown</h4>
+                            <div class="passenger-rating">
+                                <i class="fas fa-star"></i>
+                                <span id="activePassengerRating">4.9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ride Navigation Info -->
+                    <div class="navigation-info">
+                        <div class="nav-destination">
+                            <i class="fas fa-location-dot"></i>
+                            <div class="destination-text">
+                                <span class="nav-label">Destination</span>
+                                <span id="activeDestination">456 Oak Ave</span>
+                            </div>
+                        </div>
+                        <div class="nav-stats">
+                            <div class="nav-stat">
+                                <span class="stat-label">ETA</span>
+                                <span class="stat-value" id="navEta">5 min</span>
+                            </div>
+                            <div class="nav-stat">
+                                <span class="stat-label">Distance</span>
+                                <span class="stat-value" id="navDistance">2.3 km</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="ride-action-buttons">
+                        <button class="btn btn-outline" id="contactPassenger">
+                            <i class="fas fa-phone"></i>
+                            Contact
+                        </button>
+                        <button class="btn btn-primary" id="startTripBtn">Start Trip</button>
+                        <button class="btn btn-success" id="completeTripBtn" style="display: none;">Complete Trip</button>
+                    </div>
+                </div>
+
+                <!-- Recent Trips -->
+                <div class="recent-trips-card">
+                    <h3>Recent Trips</h3>
+                    <div class="trip-list" id="recentTripsList">
+                        <!-- Trips will be populated dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Map -->
+            <div class="map-container">
+                <div id="driverMap"></div>
+                
+                <!-- Map Controls -->
+                <div class="map-controls">
+                    <button class="map-control-btn" id="centerDriver">
+                        <i class="fas fa-location-arrow"></i>
+                    </button>
+                    <button class="map-control-btn" id="toggleHeatmap">
+                        <i class="fas fa-fire"></i>
+                    </button>
+                </div>
+
+                <!-- Heatmap Toggle -->
+                <div class="heatmap-legend" id="heatmapLegend" style="display: none;">
+                    <span>Demand Heatmap</span>
+                    <div class="legend-gradient"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Driver Settings Modal -->
+    <div class="modal" id="driverSettingsModal" style="display: none;">
+        <div class="modal-content">
+            <h3>Driver Settings</h3>
+            
+            <div class="settings-section">
+                <h4>Vehicle Information</h4>
+                <div class="form-group">
+                    <label>Vehicle Model</label>
+                    <input type="text" id="settingsVehicleModel" value="Toyota Camry">
+                </div>
+                <div class="form-group">
+                    <label>License Plate</label>
+                    <input type="text" id="settingsLicensePlate" value="ABC 123">
+                </div>
+                <div class="form-group">
+                    <label>Vehicle Color</label>
+                    <input type="text" id="settingsVehicleColor" value="Silver">
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h4>Service Preferences</h4>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="acceptPets" checked>
+                    <span class="checkmark"></span>
+                    <span>Accept pets</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="acceptWheelchair">
+                    <span class="checkmark"></span>
+                    <span>Wheelchair accessible</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="acceptLuggage" checked>
+                    <span class="checkmark"></span>
+                    <span>Extra luggage</span>
+                </label>
+            </div>
+
+            <div class="settings-section">
+                <h4>Service Radius</h4>
+                <input type="range" id="serviceRadius" min="1" max="20" value="10">
+                <span id="radiusValue">10 km</span>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn btn-outline" id="closeSettings">Close</button>
+                <button class="btn btn-primary" id="saveSettings">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places,geometry,visualization"></script>
+    <script src="utils.js"></script>
+    <script src="auth.js"></script>
+    <script src="map.js"></script>
+    <script src="driver.js"></script>
+    <script src="ui.js"></script>
+</body>
+</html>

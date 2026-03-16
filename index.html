@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapp - Ride Hailing Application</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-light">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-taxi nav-logo"></i>
+                <span class="brand-name">Snapp</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-fade-in">Your Ride, Your Way</h1>
+                <p class="hero-subtitle animate-fade-in-delay">Book affordable rides, track your driver, and reach your destination safely with Snapp.</p>
+                <div class="hero-buttons animate-slide-up">
+                    <a href="register.html" class="btn btn-primary btn-large">Get Started</a>
+                    <a href="#how-it-works" class="btn btn-outline btn-large">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image animate-slide-in-right">
+                <img src="assets/images/hero-phone.png" alt="Snapp App Interface" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="section-title text-center">Why Choose Snapp?</h2>
+            <p class="section-subtitle text-center">Experience the best ride-hailing service with our premium features</p>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Quick Pickup</h3>
+                    <p>Get picked up within minutes of booking. Our drivers are always nearby.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safe Rides</h3>
+                    <p>Your safety is our priority. All drivers are verified and tracked.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Best Prices</h3>
+                    <p>Competitive pricing with no surge charges. Pay what you see.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support for all your ride-related queries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title text-center">How Snapp Works</h2>
+            <p class="section-subtitle text-center">Book your ride in three simple steps</p>
+
+            <div class="steps-container">
+                <div class="step-item animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Set Your Location</h3>
+                        <p>Enter your pickup point and destination using our smart location finder.</p>
+                    </div>
+                </div>
+
+                <div class="step-item animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Choose Your Ride</h3>
+                        <p>Select from various vehicle options based on your needs and budget.</p>
+                    </div>
+                </div>
+
+                <div class="step-item animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Enjoy Your Trip</h3>
+                        <p>Track your driver in real-time and reach your destination safely.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download App Section -->
+    <section class="download-section">
+        <div class="container">
+            <div class="download-content">
+                <h2 class="download-title">Download the Snapp App</h2>
+                <p class="download-text">Get the best ride-hailing experience on your mobile device</p>
+                <div class="app-buttons">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-apple"></i>
+                        <span>App Store</span>
+                    </a>
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i>
+                        <span>Google Play</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-taxi"></i>
+                        <span>Snapp</span>
+                    </div>
+                    <p class="footer-text">Your trusted ride-hailing partner for safe and comfortable journeys.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Safety Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope"></i> support@snapp.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Ride Street, City</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Snapp. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script src="app.js"></script>
+    <script src="ui.js"></script>
+</body>
+</html>
